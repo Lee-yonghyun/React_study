@@ -19,7 +19,7 @@ class ValidationSample extends Component {
       clicked: true,
       validated: this.state.password === "0000",
     });
-    this.input.focus();
+    this.input.focus(); //click하면 input태그에 포커스를 준다.
   };
 
   render() {

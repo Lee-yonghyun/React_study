@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const IterationSample = () => {
-  const names = ["눈사람", "얼음", "눈", "바람"];
-  const nameList = names.map((item, index) => <li key={index}>{item}</li>);
-  return <ul>{nameList}</ul>;
+  const [name, setNames] = useState([
+    { id: 1, text: "눈사람" },
+    { id: 2, text: "얼음" },
+    { id: 3, text: "눈" },
+    { id: 4, text: "바람" },
+  ]);
+
+  const [inputText, setInputText] = useState("");
+  const [nextId, setNextId] = useState(5); //새로운 항목을 추가할때 사용할 id
+
+  const namesList = name.map((name) => <li key={name.id}>{name.text}</li>);
+  return <ul>{namesList}</ul>;
 };
 
 export default IterationSample;
